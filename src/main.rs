@@ -4,7 +4,7 @@ use load::load_data;
 mod plotting;
 use plotting::plot_data;
 mod classifier;
-use classifier::train_and_test_classifier;
+use classifier::train_with_hyperparameter_tuning_and_test_classifier;
 
 // getting large inspirations from the following article, as a starting point
 // https://blog.logrocket.com/machine-learning-in-rust-using-linfa/
@@ -31,7 +31,7 @@ fn main() {
     plot_data(&train);
 
     // train and test model model
-    train_and_test_classifier(&train, &test);
+    train_with_hyperparameter_tuning_and_test_classifier(&train, &test);
 
     println!("end of main, our main end");
 }
